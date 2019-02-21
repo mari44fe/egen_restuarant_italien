@@ -1,0 +1,134 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+:root {
+    --color-darkestblue: #060314;
+    --color-darkblue: #090F26;
+    --color-midtblue: #101F38;
+
+    --color-lightblue: #172F4C;
+    --color-container: rgba(16, 31, 56, 0.77);
+    --color-navigation: rgba(35, 64, 100, 0.59);
+}
+
+
+/**GENERELLE STYLINGS**/
+
+body {
+    font-family: 'Niramit', sans-serif;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-image: url(grafik/baggrund.png);
+    background-repeat: no-repeat;
+    margin: 0;
+}
+
+/****BURGERMENU****/
+
+nav a {
+    font-family: 'Niramit', sans-serif;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+nav a:hover {
+    color: var(--color-lightblue);
+}
+
+label .menu {
+    position: fixed;
+    top: 550px;
+    left: 280px;
+    z-index: 100;
+    width: 200px;
+    height: 200px;
+    background: var(--color-navigation);
+    border-radius: 50% 50% 50% 50%;
+    transition: 0.5s ease-in-out;
+    box-shadow: 0 0 0 0 var(--color-navigation), 0 0 0 0 var(--color-navigation);
+    cursor: pointer;
+
+}
+
+label .hamburger {
+    position: fixed;
+    top: 623px;
+    left: 320px;
+    width: 40px;
+    height: 3px;
+    background: white;
+    display: block;
+    transform-origin: center;
+    transition: 0.5s ease-in-out;
+}
+
+label .hamburger:after,
+label .hamburger:before {
+    transition: 0.5s ease-in-out;
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: white;
+}
+
+label .hamburger:before {
+    top: -10px;
+}
+
+label .hamburger:after {
+    bottom: -10px;
+}
+
+label input {
+    display: none;
+}
+
+label input:checked + .menu {
+    /*box-shadow: 0 0 0 100vw var(--color-navigation), 0 0 0 100vh var(--color-navigation);*/
+    box-shadow: 0 0 0 var(--color-navigation), 0 0 0 100vh var(--color-navigation);
+    border-radius: 0;
+}
+
+label input:checked + .menu .hamburger {
+    transform: rotate(45deg);
+}
+
+label input:checked + .menu .hamburger:after {
+    transform: rotate(90deg);
+    bottom: 0;
+}
+
+label input:checked + .menu .hamburger:before {
+    transform: rotate(90deg);
+    top: 0;
+}
+
+label input:checked + .menu + ul {
+    opacity: 2;
+}
+
+label ul {
+    z-index: 200;
+    position: absolute;
+    padding-left: 0;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: 0.25s 0s ease-in-out;
+    list-style-type: none;
+
+}
+
+label a {
+    margin-bottom: 1em;
+    display: block;
+    color: white;
+    text-decoration: none;
+}
