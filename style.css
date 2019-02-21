@@ -10,9 +10,9 @@
     --color-darkblue: #090F26;
     --color-midtblue: #101F38;
 
-    --color-lightblue: #172F4C;
+    --color-lightblue: #365a84;
     --color-container: rgba(16, 31, 56, 0.77);
-    --color-navigation: rgba(35, 64, 100, 0.59);
+    --color-navigation: rgb(35, 64, 100);
 }
 
 
@@ -25,6 +25,30 @@ body {
     background-image: url(grafik/baggrund.png);
     background-repeat: no-repeat;
     margin: 0;
+}
+
+/***LOGO***/
+
+.logo img {
+    position: absolute;
+    height: 11rem;
+    width: 20rem;
+    top: 10rem;
+    right: 1.2rem;
+}
+
+.citat p {
+    position: absolute;
+    top: 19rem;
+    right: -0.3rem;
+    color: white;
+    font-family: 'Niramit', sans-serif;
+    font-style: italic;
+    font-size: 0.8rem;
+    color: var(--color-lightblue);
+    width: 10rem;
+    line-height: 1rem;
+
 }
 
 /****BURGERMENU****/
@@ -41,7 +65,7 @@ nav a:hover {
 
 label .menu {
     position: fixed;
-    top: 550px;
+    top: 520px;
     left: 280px;
     z-index: 100;
     width: 200px;
@@ -56,7 +80,7 @@ label .menu {
 
 label .hamburger {
     position: fixed;
-    top: 623px;
+    top: 585px;
     left: 320px;
     width: 40px;
     height: 3px;
@@ -116,8 +140,7 @@ label input:checked + .menu + ul {
 label ul {
     z-index: 200;
     position: absolute;
-    padding-left: 0;
-    top: 45%;
+    top: 48%;
     left: 50%;
     transform: translate(-50%, -50%);
     opacity: 0;
@@ -131,4 +154,37 @@ label a {
     display: block;
     color: white;
     text-decoration: none;
+}
+
+
+/**NAVIGATION**/
+
+.social1 {
+    position: absolute;
+    z-index: 300;
+    top: 1rem;
+    right: 1rem;
+    height: 2rem;
+    width: 2rem;
+
+}
+
+.social2 {
+    position: absolute;
+    z-index: 300;
+    top: 1rem;
+    right: 3.6rem;
+    height: 2rem;
+    width: 2rem;
+
+}
+
+.social3 {
+    position: absolute;
+    z-index: 300;
+    top: 1rem;
+    right: 6rem;
+    height: 2rem;
+    width: 2rem;
+
 }
