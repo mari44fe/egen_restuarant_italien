@@ -15,6 +15,10 @@
     --color-navigation: rgb(35, 64, 100);
 }
 
+img {
+    width: 100%;
+}
+
 
 /**GENERELLE STYLINGS**/
 
@@ -32,9 +36,9 @@ body {
 .logo img {
     position: absolute;
     height: 11rem;
-    width: 20rem;
-    top: 10rem;
-    right: 1.2rem;
+    width: 22rem;
+    top: 9.5rem;
+    right: 1rem;
 }
 
 .citat p {
@@ -65,7 +69,7 @@ nav a:hover {
 
 label .menu {
     position: fixed;
-    top: 520px;
+    top: 580px;
     left: 280px;
     z-index: 100;
     width: 200px;
@@ -80,7 +84,7 @@ label .menu {
 
 label .hamburger {
     position: fixed;
-    top: 585px;
+    top: 635px;
     left: 320px;
     width: 40px;
     height: 3px;
@@ -187,4 +191,114 @@ label a {
     height: 2rem;
     width: 2rem;
 
+}
+
+
+/***MENU*****/
+
+.overskrift h1 {
+    font-family: 'Lovers Quarrel', cursive;
+    text-transform: lowercase;
+    font-size: 3rem;
+    text-align: center;
+    color: white;
+}
+
+h3 {
+    font-family: 'Niramit', sans-serif;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.valgt {
+    color: var(--color-lightblue);
+}
+
+
+/*Retterne individuelt*/
+
+#liste {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    margin: 1rem;
+    grid-gap: 2rem;
+}
+
+.minret {
+    padding: 1rem;
+    background-color: white;
+}
+
+
+pop up vindue #popup {
+    top: 0;
+    width: 100vw;
+    height: 100vw;
+    position: fixed;
+    background-color: hsla(0, 0%, 50%, 0.67);
+    display: none;
+    overflow: scroll;
+}
+
+#indhold {
+    min-height: 50vh;
+    background-color: white;
+    width: 70vw;
+    margin: 4rem auto;
+}
+
+#luk {
+    position: fixed;
+    right: 4rem;
+    top: 4.3rem;
+
+}
+
+#luk button {
+    font-size: 1rem;
+    padding: 0.5rem 1.rem;
+    height: 2.4rem;
+    width: 3.5rem;
+    border-radius: 40px;
+    background: darkorange;
+}
+
+
+@media only screen and (min-width:600px) {
+    #liste {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #luk {
+        right: 6rem;
+    }
+
+    .header {
+        height: 20vw;
+    }
+
+    .header h1 {
+        font-size: 3rem;
+    }
+
+
+
+}
+
+@media only screen and (min-width:768px) {
+    #liste {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    #luk {
+        right: 11.5rem;
+    }
+
+    .header {
+        height: 10vw;
+    }
+
+    footer {
+        font-size: 1.2rem;
+    }
 }

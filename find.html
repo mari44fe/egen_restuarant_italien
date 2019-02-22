@@ -1,10 +1,11 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="da">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Lovers+Quarrel|Niramit" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Niramit:200,300,400" rel="stylesheet">
     <title>affamato</title>
 
     <style>
@@ -34,36 +35,39 @@ img {
 
 body {
     font-family: 'Niramit', sans-serif;
-    overflow-x: hidden;
-    overflow-y: hidden;
     background-image: url(grafik/baggrund.png);
-    background-repeat: no-repeat;
     margin: 0;
 }
+
 
 /***LOGO***/
 
 .logo img {
     position: absolute;
-    height: 11rem;
-    width: 22rem;
-    top: 9.5rem;
-    right: 1rem;
-}
+    height: 8rem;
+    width: 9rem;
+    top: -2rem;
+    right: 14.5rem;
+        }
 
-.citat p {
-    position: absolute;
-    top: 19rem;
-    right: -0.3rem;
-    color: white;
-    font-family: 'Niramit', sans-serif;
-    font-style: italic;
-    font-size: 0.8rem;
-    color: var(--color-lightblue);
-    width: 10rem;
-    line-height: 1rem;
+ /****HEADER***/
 
-}
+.header p {
+     position: absolute;
+     top: 14rem;
+     left: 7.5rem;
+     font-family: 'Lovers Quarrel', cursive;
+     color: white;
+     font-size: 7rem;
+        }
+
+.header img {
+      position: absolute;
+      top: 16.5rem;
+      left: 2rem;
+      height: 6rem;
+      width: 6rem;
+        }
 
 /****BURGERMENU****/
 
@@ -204,100 +208,39 @@ label a {
 }
 
 
-/*****MEDIA Q IPAD*******/
-
-
-@media only screen and (min-width:600px) {
-   /**GENERELLE STYLINGS**/
-
-    #splash img {
-        height: 768px;
-    }
-
-body {
-    background-image: none;
-    background-repeat: none;
-}
-
-/***LOGO***/
-
-.logo img {
-    height: 30rem;
-    width: 40rem;
-    top: 5rem;
-    left: 11rem;
-}
-
-.citat p {
-    top: 26rem;
-    right: 5rem;
-    font-size: 1.5rem;
-    width: 18rem;
-    line-height: 1.5rem;
-
-}
-
-/****BURGERMENU****/
-
-nav a {
-    font-size: 2.5rem;
-}
-
-
-label .menu {
-    top: 38rem;
-    left: 50rem;
-    width: 20rem;
-    height: 20rem;
-
-}
-
-label .hamburger {
-    top: 700px;
-    left: 905px;
-    width: 55px;
-    height: 4px;
-}
-
-
-
-label input:checked + .menu {
-    box-shadow: 0 0 0 var(--color-navigation), 0 0 0 150vh var(--color-navigation);
-    border-radius: 0;
-}
-
-
-/**NAVIGATION**/
-
-.social1 {
-    right: 1rem;
-    height: 4rem;
-    width: 4rem;
-
-}
-
-.social2 {
-    right: 5rem;
-    height: 4.4rem;
-    width: 4.4rem;
-
-}
-
-.social3 {
-    right: 9.5rem;
-    height: 3.8rem;
-    width: 3.8rem;
-
-}
-
+.find {
+    margin: 1rem;
+    position: absolute;
+    top: 6rem;
 
         }
 
+.find h2 {
+    font-family: 'Lovers Quarrel', cursive;
+    font-size: 5rem;
+    font-weight: 200;
+    color: white;
+        }
+
+.find h3 {
+    font-family: 'Niramit', sans-serif;
+    font-size: 1.5rem;
+    color: white;
+        }
+
+.find p {
+    font-family: 'Niramit', sans-serif;
+    font-size: 1rem;
+    color: white;
+    margin-bottom: 1rem;
+    line-height: 1rem;
+    font-weight: 200;
+
+}
 
 
-@media only screen and (min-width:768px) {
-
-
+.map img {
+      padding: 1rem 0rem 1rem 0rem;
         }
 
 
@@ -313,15 +256,9 @@ label input:checked + .menu {
             <span class="social3"><img src="grafik/social_media/Artboard%204.svg" alt="twitter"></span>
 
             <div class="logo">
-                <img src="logo_svg/logo_tekst_hvid1.svg" alt="logo"></div>
-
-            <div class="citat">
-                <p>Italiensk restaurant, hvor
-                    samvær, gode råvarer og
-                    håndværk er i fokus.<br>
-                    Find os her</p>
+                <a href="index.html">
+                    <img src="logo_svg/logo_tekst_hvid1.svg" alt="logo"></a>
             </div>
-
 
             <label>
                 <input type="checkbox">
@@ -329,15 +266,14 @@ label input:checked + .menu {
                     <span class="hamburger"></span>
                 </span>
                 <ul>
-
+                    <li>
+                        <a href="index.html">forside</a>
+                    </li>
                     <li>
                         <a href="menu2.html">menu</a>
                     </li>
                     <li>
                         <a href="koncept.html">koncept</a>
-                    </li>
-                    <li>
-                        <a href="find.html">find os</a>
                     </li>
 
                 </ul>
@@ -348,11 +284,35 @@ label input:checked + .menu {
     <!----------SPLASH-------------->
     <section id="splash">
         <picture>
-            <source media="(min-width: 600px)" srcset="grafik/splash/desktop.png">
-            <source media="(min-width: 375px)" srcset="grafik/splash/ipad.png">
+            <source media="(min-width: 626px)" srcset="grafik/splash/desktop.png">
+            <source media="(min-width: 376px)" srcset="grafik/splash/ipad.png">
             <img src="grafik/splash/mobile.png" alt="splashbillee">
         </picture>
     </section>
+
+    <article class="find">
+
+        <div class="text">
+            <h2>find os</h2>
+            <h3>restaurant affamato</h3>
+            <p>adresse: sankt peders stræde 5 <br> 1453 københavn</p>
+            <p>kontakt@affamato.dk</p>
+            <p>+45 33 74 34 17</p>
+        </div>
+
+        <div class="text">
+            <h3>åbningstider</h3>
+            <p>mandag-torsdag : 14.00-22.00</p>
+            <p>fredag : 12.00-23.00</p>
+            <p>lørdag-søndag : 12.00-01.00</p>
+        </div>
+
+        <div class="map">
+            <img src="imgs/map.png" alt="kort">
+        </div>
+
+
+    </article>
 
 </body>
 

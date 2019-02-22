@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Lovers+Quarrel|Niramit" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Niramit:300i" rel="stylesheet">
+    <title>affamato</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+        :root {
+            --color-darkestblue: #060314;
+            --color-darkblue: #090F26;
+            --color-midtblue: #101F38;
+
+            --color-lightblue: #365a84;
+            --color-container: rgba(16, 31, 56, 0.77);
+            --color-navigation: rgb(35, 64, 100);
+        }
+
+        img {
+            width: 100%;
+        }
+
+        /**GENERELLE STYLINGS**/
+
+        body {
+            font-family: 'Niramit', sans-serif;
+            background-image: url(grafik/baggrund.png);
+            margin: 0;
+        }
+
+
+        /***LOGO***/
+
+        .logo img {
+            position: absolute;
+            height: 8rem;
+            width: 9rem;
+            top: -2rem;
+            right: 14.5rem;
+        }
+
+
+        /**NAVIGATION**/
+
+        .social1 {
+            position: absolute;
+            z-index: 300;
+            top: 1rem;
+            right: 1rem;
+            height: 2rem;
+            width: 2rem;
+
+        }
+
+        .social2 {
+            position: absolute;
+            z-index: 300;
+            top: 1rem;
+            right: 3.6rem;
+            height: 2rem;
+            width: 2rem;
+
+        }
+
+        .social3 {
+            position: absolute;
+            z-index: 300;
+            top: 1rem;
+            right: 6rem;
+            height: 2rem;
+            width: 2rem;
+
+        }
+
+        /****HEADER***/
+
+        .header h1 {
+            position: absolute;
+            top: 14rem;
+            left: 7.5rem;
+            font-family: 'Lovers Quarrel', cursive;
+            font-weight: 200;
+            color: white;
+            text-transform: lowercase;
+            font-size: 7rem;
+
+        }
+
+        .header img {
+            position: absolute;
+            top: 16.5rem;
+            left: 2rem;
+            height: 6rem;
+            width: 6rem;
+        }
+
+        /****BURGERMENU****/
+
+        nav a, li {
+            font-family: 'Niramit', sans-serif;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        nav a:hover {
+            color: var(--color-lightblue);
+        }
+
+
+        .valgt {
+            color: var(--color-lightblue);
+        }
+
+        label .menU {
+            position: fixed;
+            top: 580px;
+            left: 280px;
+            z-index: 100;
+            width: 200px;
+            height: 200px;
+            background: var(--color-navigation);
+            border-radius: 50% 50% 50% 50%;
+            transition: 0.5s ease-in-out;
+            box-shadow: 0 0 0 0 var(--color-navigation), 0 0 0 0 var(--color-navigation);
+            cursor: pointer;
+
+        }
+
+        label .hamburger {
+            position: fixed;
+            top: 635px;
+            left: 320px;
+            width: 40px;
+            height: 3px;
+            background: white;
+            display: block;
+            transform-origin: center;
+            transition: 0.5s ease-in-out;
+        }
+
+        label .hamburger:after,
+        label .hamburger:before {
+            transition: 0.5s ease-in-out;
+            content: "";
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: white;
+        }
+
+        label .hamburger:before {
+            top: -10px;
+        }
+
+        label .hamburger:after {
+            bottom: -10px;
+        }
+
+        label input {
+            display: none;
+        }
+
+        label input:checked+.menU {
+            box-shadow: 0 0 0 var(--color-navigation), 0 0 0 100vh var(--color-navigation);
+            border-radius: 0;
+        }
+
+        label input:checked+.menU .hamburger {
+            transform: rotate(45deg);
+        }
+
+        label input:checked+.menU .hamburger:after {
+            transform: rotate(90deg);
+            bottom: 0;
+        }
+
+        label input:checked+.menU .hamburger:before {
+            transform: rotate(90deg);
+            top: 0;
+        }
+
+        label input:checked+.menU+ul {
+            opacity: 2;
+        }
+
+        label ul {
+            z-index: 200;
+            position: absolute;
+            top: 48%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: 0.25s 0s ease-in-out;
+            list-style-type: none;
+
+        }
+
+        label a {
+            margin-bottom: 1em;
+            display: block;
+            color: white;
+            text-decoration: none;
+        }
+
+        label li {
+            margin-bottom: 1em;
+            display: block;
+            color: white;
+            text-decoration: none;
+            text-transform: lowercase;
+        }
+
+        /*Retterne individuelt*/
+
+        #liste {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            margin: 1rem;
+            grid-gap: 2rem;
+        }
+
+        .minret {
+            padding: 1rem;
+            background-color: white;
+        }
+
+
+        /*pop up vindue*/
+
+        #popup {
+            font-family: 'Niramit', sans-serif;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            background-color: var(--color-container);
+            display: none;
+            z-index: 10;
+            overflow: scroll;
+            line-height: 1.4rem;
+            color: var(--color-darkblue);
+        }
+
+        #indhold {
+            min-height: 50vh;
+            background-color: white;
+            width: 70vw;
+            margin: 4rem auto;
+        }
+
+        #luk {
+            position: fixed;
+            right: 4rem;
+            top: 4.3rem;
+
+        }
+
+        #luk button {
+            font-size: 2rem;
+            padding: 0.5rem 1.rem;
+            height: 3rem;
+            width: 3rem;
+            background-color: var(--color-midtblue);
+            color:white;
+            border-radius: 50px;
+            border: none;
+            position: absolute;
+            top: -0.1rem;
+            left:-2.6rem;
+
+        }
+
+
+        @media only screen and (min-width:600px) {
+            #liste {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            #luk {
+                right: 6rem;
+            }
+
+
+
+        }
+
+        @media only screen and (min-width:768px) {
+            #liste {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            #luk {
+                right: 11.5rem;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="logo">
+        <a href="index.html">
+            <img src="logo_svg/logo_tekst_hvid1.svg" alt="logo"></a>
+    </div>
+
+
+    <div id="popup">
+        <div id="luk">
+            <button>&#10005;</button>
+        </div>
+        <div id="indhold"></div>
+    </div>
+
+    <header>
+        <div class="header">
+            <img src="logo_svg/logo_blad_hvid.svg" alt="logo blad">
+            <h1>menu</h1>
+        </div>
+
+        <nav class="menu">
+            <span class="social1"><img src="grafik/social_media/Artboard%202.svg" alt="facebook"></span>
+            <span class="social2"><img src="grafik/social_media/Artboard%203.svg" alt="instagram"></span>
+            <span class="social3"><img src="grafik/social_media/Artboard%204.svg" alt="twitter"></span>
+
+            <label>
+                <input type="checkbox">
+                <span class="menU">
+                    <span class="hamburger"></span>
+                </span>
+                <ul>
+                    <li class="filter valgt" data-ret="alle">Alle</li>
+                    <li class="filter" data-ret="forretter">Forretter</li>
+                    <li class="filter" data-ret="hovedretter">Hovedretter</li>
+                    <li class="filter" data-ret="dessert">Desserter</li>
+                    <li class="filter" data-ret="drikkevarer">Drikkevarer</li>
+                    <br>
+                    <li> <a href="koncept.html">koncept</a></li>
+                    <li> <a href="find.html">find os</a></li>
+                </ul>
+            </label>
+        </nav>
+    </header>
+
+    <!----------SPLASH-------------->
+    <section id="splash">
+        <picture>
+            <source media="(min-width: 626px)" srcset="grafik/splash/desktop.png">
+            <source media="(min-width: 376px)" srcset="grafik/splash/ipad.png">
+            <img src="grafik/splash/mobile.png" alt="splashbillee">
+        </picture>
+    </section>
+
+
+    <main>
+        <section id="liste" class="retter"></section>
+    </main>
+
+
+    <script>
+        let retter = [];
+        let filter = "alle";
+
+        document.addEventListener("DOMContentLoaded", start);
+
+        async function start() {
+            const myJson = await fetch("https://mandalskeawebspace.dk/claude_php/clean_up_spreadsheet.php?id=11bWkk284_mTjJZLNBBIVXMsLKOX3jeYQNRnLBhOWisU");
+            retter = await myJson.json();
+
+            retter.sort((a, b) => {
+                return a.navn.localeCompare(b.navn);
+            });
+
+            visRetter();
+        }
+
+
+
+        function visRetter() {
+            let destination = document.querySelector("#liste");
+
+
+            destination.innerHTML = "";
+            retter.forEach(ret => {
+                if (filter == "alle" || filter == ret.kategori) {
+                    let template = `
+                <article class="minret">
+<img src=imgs/${ret.billede}-sm.jpg alt=${ret.navn}>
+<h2>${ret.navn}</h2>
+<p>${ret.section}</p>
+<p>Allergener: ${ret.allergener}</p>
+<p>${ret.kort}</p>
+<p>Pris: ${ret.pris},-</p>
+    </articlet>`
+                    /*ret.section.style.fontSize = "0.5rem";
+                    ret.section.style.fontWeight = "300i";
+                    ret.allergener.style.fontSize = "0.5rem";
+                    ret.allergener.style.fontWeight = "300i";*/
+
+                    ;
+
+
+
+                    destination.insertAdjacentHTML("beforeend", template);
+
+                    destination.lastElementChild.addEventListener("click", () => {
+                        visSingle(ret);
+                    });
+                }
+            });
+
+            document.querySelectorAll(".filter").forEach(knap => {
+                knap.addEventListener("click", filt);
+            });
+
+            function filt() {
+                document.querySelectorAll(".filter").forEach(knap => {
+                    knap.classList.remove("valgt");
+                });
+                this.classList.add("valgt");
+                document.querySelector(".header h1").textContent = this.textContent;
+
+                filter = this.getAttribute("data-ret");
+                visRetter();
+            }
+
+        }
+
+        function visSingle(ret) {
+            document.querySelector("#indhold").innerHTML = `
+                    <article class="minret">
+<img src=imgs/${ret.billede}-sm.jpg alt=${ret.navn}>
+<h2>${ret.navn}</h2>
+<p>${ret.section}</p>
+<p>Allergener: ${ret.allergener}</p>
+<p>${ret.kort}</p>
+<p>Pris: ${ret.pris},-</p>
+                    </article>`;
+            document.querySelector("#popup").style.display = "block";
+            document.querySelector("#popup #luk").addEventListener("click", close);
+        }
+
+        function close() {
+            document.querySelector("#popup").style.display = "none";
+        }
+
+    </script>
+
+</body>
+
+</html>
