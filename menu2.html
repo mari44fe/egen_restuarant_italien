@@ -279,6 +279,18 @@
 
         }
 
+        .kategori {
+            font-family: 'Niramit', sans-serif;
+             font-size: 1rem;
+            font-style: italic;
+        }
+
+        .betegnelse {
+            font-family: 'Niramit', sans-serif;
+             font-size: 1rem;
+            font-style: italic;
+        }
+
 
         @media only screen and (min-width:600px) {
             #liste {
@@ -397,17 +409,11 @@
                 <article class="minret">
 <img src=imgs/${ret.billede}-sm.jpg alt=${ret.navn}>
 <h2>${ret.navn}</h2>
-<p>${ret.section}</p>
-<p>Allergener: ${ret.allergener}</p>
+<p class="kategori">${ret.section}</p>
+<p class="betegnelse">allergener: ${ret.allergener}</p>
 <p>${ret.kort}</p>
 <p>Pris: ${ret.pris},-</p>
-    </articlet>`
-                    /*ret.section.style.fontSize = "0.5rem";
-                    ret.section.style.fontWeight = "300i";
-                    ret.allergener.style.fontSize = "0.5rem";
-                    ret.allergener.style.fontWeight = "300i";*/
-
-                    ;
+    </articlet>`;
 
 
 
@@ -441,11 +447,11 @@
                     <article class="minret">
 <img src=imgs/${ret.billede}-sm.jpg alt=${ret.navn}>
 <h2>${ret.navn}</h2>
-<p>${ret.section}</p>
-<p>Allergener: ${ret.allergener}</p>
+<p class="kategori">${ret.section}</p>
+<p class="betegnelse">allergener: ${ret.allergener}</p>
 <p>${ret.kort}</p>
 <p>Pris: ${ret.pris},-</p>
-                    </article>`;
+    </articlet>`;
             document.querySelector("#popup").style.display = "block";
             document.querySelector("#popup #luk").addEventListener("click", close);
         }
@@ -453,7 +459,6 @@
         function close() {
             document.querySelector("#popup").style.display = "none";
         }
-
     </script>
 
 </body>

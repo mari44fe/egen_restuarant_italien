@@ -41,6 +41,11 @@ body {
     margin: 0;
 }
 
+  #splash img {
+        height: 670px;
+    }
+
+
 /***LOGO***/
 
 .logo img {
@@ -79,7 +84,7 @@ nav a:hover {
 
 label .menu {
     position: fixed;
-    top: 580px;
+    top: 550px;
     left: 280px;
     z-index: 100;
     width: 200px;
@@ -94,7 +99,7 @@ label .menu {
 
 label .hamburger {
     position: fixed;
-    top: 635px;
+    top: 610px;
     left: 320px;
     width: 40px;
     height: 3px;
@@ -176,28 +181,28 @@ label a {
 .social1 {
     position: absolute;
     z-index: 300;
-    top: 1rem;
+    top: 1.5rem;
     right: 1rem;
-    height: 2rem;
-    width: 2rem;
+    height: 2.1rem;
+    width: 2.1rem;
 
 }
 
 .social2 {
     position: absolute;
     z-index: 300;
-    top: 1rem;
-    right: 3.6rem;
-    height: 2rem;
-    width: 2rem;
+    top: 1.5rem;
+    right: 3.3rem;
+    height: 2.3rem;
+    width: 2.3rem;
 
 }
 
 .social3 {
     position: absolute;
     z-index: 300;
-    top: 1rem;
-    right: 6rem;
+    top: 1.5rem;
+    right: 5.9rem;
     height: 2rem;
     width: 2rem;
 
@@ -207,11 +212,12 @@ label a {
 /*****MEDIA Q IPAD*******/
 
 
-@media only screen and (min-width:600px) {
+@media only screen and (min-width:376px) {
    /**GENERELLE STYLINGS**/
 
     #splash img {
-        height: 768px;
+        height: 774px;
+        overflow: hidden;
     }
 
 body {
@@ -222,15 +228,15 @@ body {
 /***LOGO***/
 
 .logo img {
-    height: 30rem;
-    width: 40rem;
-    top: 5rem;
-    left: 11rem;
+    height: 15rem;
+    width: 60rem;
+    top: 12rem;
+    left: -1.5rem;
 }
 
 .citat p {
     top: 26rem;
-    right: 5rem;
+    right: 7rem;
     font-size: 1.5rem;
     width: 18rem;
     line-height: 1.5rem;
@@ -239,23 +245,19 @@ body {
 
 /****BURGERMENU****/
 
-nav a {
-    font-size: 2.5rem;
-}
-
 
 label .menu {
-    top: 38rem;
-    left: 50rem;
-    width: 20rem;
-    height: 20rem;
+    top: 34rem;
+    left: 55rem;
+    width: 15rem;
+    height: 15rem;
 
 }
 
 label .hamburger {
-    top: 700px;
-    left: 905px;
-    width: 55px;
+    top: 610px;
+    left: 935px;
+    width: 50px;
     height: 4px;
 }
 
@@ -270,23 +272,20 @@ label input:checked + .menu {
 /**NAVIGATION**/
 
 .social1 {
-    right: 1rem;
-    height: 4rem;
-    width: 4rem;
+    width: 3.5rem;
 
 }
 
 .social2 {
     right: 5rem;
-    height: 4.4rem;
-    width: 4.4rem;
+    width: 3.9rem;
 
 }
 
 .social3 {
+    top: 1.5rem;
     right: 9.5rem;
-    height: 3.8rem;
-    width: 3.8rem;
+    width: 3.4rem;
 
 }
 
@@ -295,7 +294,71 @@ label input:checked + .menu {
 
 
 
-@media only screen and (min-width:768px) {
+@media only screen and (min-width:1023px) {
+
+/***LOGO***/
+
+.logo img {
+    height: 16rem;
+    width: 61rem;
+    top: 10rem;
+    left: 4rem;
+}
+
+.citat p {
+    top: 25rem;
+    right: 15rem;
+    font-size: 1.5rem;
+    width: 18rem;
+    line-height: 1.5rem;
+
+}
+
+/****BURGERMENU****/
+
+
+label .menu {
+    top: 34rem;
+    left: 55rem;
+    width: 15rem;
+    height: 15rem;
+
+}
+
+label .hamburger {
+    top: 610px;
+    left: 935px;
+    width: 50px;
+    height: 4px;
+}
+
+
+
+label input:checked + .menu {
+    box-shadow: 0 0 0 var(--color-navigation), 0 0 0 150vh var(--color-navigation);
+    border-radius: 0;
+}
+
+
+/**NAVIGATION**/
+
+.social1 {
+    width: 3.2rem;
+
+}
+
+.social2 {
+    right: 4.5rem;
+    width: 3.5rem;
+
+}
+
+.social3 {
+    top: 1.5rem;
+    right: 8.4rem;
+    width: 3rem;
+
+}
 
 
         }
