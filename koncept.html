@@ -24,6 +24,7 @@
     --color-lightblue: #365a84;
     --color-container: rgba(16, 31, 56, 0.77);
     --color-navigation: rgb(35, 64, 100);
+    --color-nav: rgba(6, 3, 20, 0.82);
 }
 
 img {
@@ -345,8 +346,143 @@ label input:checked + .menu {
 
 @media only screen and (min-width:1023px) {
 
+/***LOGO***/
+.logo img {
+    position: fixed;
+    height: 10rem;
+    width: 12rem;
+    top: -2rem;
+    left: 1rem;
         }
 
+    /****HEADER***/
+
+.header p {
+     top: 16rem;
+     left: 34rem;
+     font-size: 13rem;
+    font-weight: 200;
+        }
+
+.header img {
+      top: 20rem;
+      left: 26.5rem;
+      height: 10rem;
+      width: 8rem;
+        }
+
+
+/****BURGERMENU****/
+
+    nav {
+        width: 100%;
+        height:6.5rem;
+        background-color: none;
+        position: fixed;
+        z-index: 1000;
+        transition: all 350ms ease-out;
+    }
+
+nav a {
+    font-family: 'Niramit', sans-serif;
+    font-size: 1.6rem;
+    text-align: center;
+    display: inline;
+
+}
+
+label .menu {
+display: none;
+
+}
+
+label .hamburger {
+ display: none;
+}
+
+
+label ul {
+        position: fixed;
+        float: right;
+        top: 2.6rem;
+        left: 36rem;
+        transform:none;
+        opacity: 100;
+        transition: none;
+        list-style-type: none;
+
+    }
+
+
+label li {
+    display: inline;
+    }
+
+label a {
+    margin-bottom: 1em;
+    color: white;
+    text-decoration: none;
+    margin-left: 4rem;
+}
+
+
+/**NAVIGATION**/
+
+.social1 {
+    position: fixed;
+    top: 1.5rem;
+    width: 3.2rem;
+
+}
+
+.social2 {
+       position: fixed;
+    top: 1.5rem;
+    right: 4.5rem;
+    width: 3.5rem;
+
+}
+
+.social3 {
+    position: fixed;
+    top: 1.5rem;
+    right: 8.4rem;
+    width: 3rem;
+
+}
+
+ .nonna {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    }
+
+.nonna h2 {
+    font-family: 'Niramit', sans-serif;
+    font-size: 1.5rem;
+    color: white;
+    margin-top: 0.5rem;
+        }
+
+.nonna p {
+    font-family: 'Niramit', sans-serif;
+    font-size: 1rem;
+    color: white;
+    margin-bottom: 1rem;
+    font-weight: 300;
+
+}
+
+
+
+.nonna img {
+    width: 70%;
+      padding: 1rem 0rem 1rem 0rem;
+    margin-left: 5rem;
+        }
+
+
+
+        }
 
     </style>
 </head>
@@ -362,11 +498,6 @@ label input:checked + .menu {
             <div class="logo">
                 <a href="index.html">
                     <img src="logo_svg/logo_tekst_hvid1.svg" alt="logo"></a>
-            </div>
-
-            <div class="header">
-                <img src="logo_svg/logo_blad_hvid.svg" alt="logo blad">
-                <p>koncept</p>
             </div>
 
 
@@ -389,6 +520,13 @@ label input:checked + .menu {
                 </ul>
             </label>
         </nav>
+
+
+        <div class="header">
+            <img src="logo_svg/logo_blad_hvid.svg" alt="logo blad">
+            <p>koncept</p>
+        </div>
+
     </header>
 
     <!----------SPLASH-------------->
@@ -424,6 +562,24 @@ label input:checked + .menu {
             </div>
         </article>
     </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+
+        let bodyTag = document.querySelector("body");
+        let minNav = document.querySelector("nav");
+
+        function start() {
+            let scrolled = () => {
+                let dec = scrollY / (bodyTag.scrollHeight - innerHeight);
+                return Math.floor(dec * 300);
+            }
+
+            addEventListener('scroll', () => {
+                minNav.style.setProperty('background-color', scrolled() > 50 ? "var(--color-nav)" : "");
+            })
+        }
+    </script>
 
 </body>
 
