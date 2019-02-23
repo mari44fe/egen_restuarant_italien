@@ -292,26 +292,147 @@
         }
 
 
-        @media only screen and (min-width:600px) {
-            #liste {
-                grid-template-columns: repeat(2, 1fr);
+@media only screen and (min-width:600px) {
+
+/***LOGO***/
+
+.logo img {
+    height: 10rem;
+    width: 12rem;
+    top: -2rem;
+    left: 1rem;
+        }
+
+
+/****BURGERMENU****/
+
+
+label .menU {
+    top: 34rem;
+    left: 55rem;
+    width: 15rem;
+    height: 15rem;
+
+}
+
+label .hamburger {
+    top: 610px;
+    left: 935px;
+    width: 50px;
+    height: 4px;
+}
+
+
+
+label input:checked + .menU {
+    box-shadow: 0 0 0 var(--color-navigation), 0 0 0 150vh var(--color-navigation);
+    border-radius: 0;
+}
+
+
+/**NAVIGATION**/
+
+.social1 {
+    width: 3.5rem;
+
+}
+
+.social2 {
+    right: 5rem;
+    width: 3.9rem;
+
+}
+
+.social3 {
+    top: 1rem;
+    right: 9.5rem;
+    width: 3.4rem;
+
+}
+
+
+
+#liste {
+grid-template-columns: repeat(2, 1fr);
             }
 
-            #luk {
-                right: 6rem;
-            }
+#luk {
+    right: 6rem;
+        }
+
+
+
+
+/*pop up vindue*/
+
+#popup {
+    font-family: 'Niramit', sans-serif;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: var(--color-container);
+    display: none;
+    z-index: 10;
+    overflow: scroll;
+    line-height: 1.4rem;
+    color: var(--color-darkblue);
+        }
+
+        #indhold {
+            min-height: 10vh;
+            background-color: white;
+            width: 35vw;
+            margin: 2rem auto;
+        }
+
+        #luk {
+            position: fixed;
+            right: 4rem;
+            top: 4.3rem;
+
+        }
+
+        #luk button {
+            font-size: 2rem;
+            padding: 0.5rem 1.rem;
+            height: 4rem;
+            width: 4rem;
+            background-color: var(--color-midtblue);
+            color:white;
+            border-radius: 50px;
+            border: none;
+            position: absolute;
+            top: -2rem;
+            left: -20.9rem;
+
+        }
+
+        .kategori {
+            font-family: 'Niramit', sans-serif;
+             font-size: 1rem;
+            font-style: italic;
+        }
+
+        .betegnelse {
+            font-family: 'Niramit', sans-serif;
+             font-size: 1rem;
+            font-style: italic;
+        }
 
 
 
         }
 
-        @media only screen and (min-width:768px) {
-            #liste {
-                grid-template-columns: repeat(3, 1fr);
+
+
+@media only screen and (min-width:1023px) {
+    #liste {
+         grid-template-columns: repeat(3, 1fr);
             }
 
-            #luk {
-                right: 11.5rem;
+    #luk {
+        right: 11.5rem;
             }
 
         }
@@ -459,7 +580,6 @@
         function close() {
             document.querySelector("#popup").style.display = "none";
         }
-
     </script>
 
 </body>
