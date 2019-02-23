@@ -314,30 +314,52 @@ label input:checked + .menu {
 
 }
 
+
 /****BURGERMENU****/
 
+nav a {
+    font-family: 'Niramit', sans-serif;
+    font-size: 1.6rem;
+    text-align: center;
+    display: inline;
+    margin-left: 4rem;
+
+}
 
 label .menu {
-    top: 34rem;
-    left: 55rem;
-    width: 15rem;
-    height: 15rem;
+display: none;
 
 }
 
 label .hamburger {
-    top: 610px;
-    left: 935px;
-    width: 50px;
-    height: 4px;
+ display: none;
 }
 
 
+label ul {
+        position: fixed;
+        float: right;
+        top: 2.6rem;
+        left: 35rem;
+        transform:none;
+        opacity: 100;
+        transition: none;
+        list-style-type: none;
 
-label input:checked + .menu {
-    box-shadow: 0 0 0 var(--color-navigation), 0 0 0 150vh var(--color-navigation);
-    border-radius: 0;
+    }
+
+
+label li {
+    display: inline;
+    }
+
+label a {
+    margin-bottom: 1em;
+    color: white;
+    text-decoration: none;
 }
+
+
 
 
 /**NAVIGATION**/
