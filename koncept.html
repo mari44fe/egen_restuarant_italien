@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Lovers+Quarrel|Niramit" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Niramit:300,400" rel="stylesheet">
     <title>affamato</title>
 
     <style>
@@ -206,6 +207,7 @@ label a {
 
 }
 
+/****INDHOLD****/
 
 #koncept {
     margin: 1rem;
@@ -223,12 +225,130 @@ label a {
     font-size: 1rem;
     color: white;
     margin-bottom: 1rem;
+    font-weight: 300;
 
 }
 
 
 .nonna img {
       padding: 1rem 0rem 1rem 0rem;
+        }
+
+
+@media only screen and (min-width:376px) {
+
+/***LOGO***/
+
+.logo img {
+    height: 10rem;
+    width: 12rem;
+    top: -2rem;
+    left: 1rem;
+        }
+
+
+
+/****BURGERMENU****/
+
+
+label .menu {
+    top: 34rem;
+    left: 55rem;
+    width: 15rem;
+    height: 15rem;
+
+}
+
+label .hamburger {
+    top: 610px;
+    left: 935px;
+    width: 50px;
+    height: 4px;
+}
+
+
+
+label input:checked + .menu {
+    box-shadow: 0 0 0 var(--color-navigation), 0 0 0 150vh var(--color-navigation);
+    border-radius: 0;
+}
+
+
+/**NAVIGATION**/
+
+.social1 {
+    width: 3.5rem;
+
+}
+
+.social2 {
+    right: 5rem;
+    width: 3.9rem;
+
+}
+
+.social3 {
+    top: 1rem;
+    right: 9.5rem;
+    width: 3.4rem;
+
+}
+
+
+/****HEADER***/
+
+.header p {
+     top: 14rem;
+     left: 27.5rem;
+     font-size: 10rem;
+    font-weight: 200;
+        }
+
+.header img {
+      top: 17.5rem;
+      left: 19.7rem;
+      height: 8rem;
+      width: 8rem;
+        }
+
+    #koncept {
+
+    }
+
+.nonna {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    }
+
+.nonna h2 {
+    font-family: 'Niramit', sans-serif;
+    font-size: 1.5rem;
+    color: white;
+    margin-top: 0.5rem;
+        }
+
+.nonna p {
+    font-family: 'Niramit', sans-serif;
+    font-size: 1rem;
+    color: white;
+    margin-bottom: 1rem;
+
+}
+
+.nonna img {
+    width: 80%;
+      padding: 1rem 0rem 1rem 0rem;
+    margin-left: 2rem;
+        }
+
+
+
+
+        }
+
+
+@media only screen and (min-width:1023px) {
+
         }
 
 
