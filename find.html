@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="da">
 
 <head>
@@ -35,9 +35,12 @@ img {
 
 body {
     font-family: 'Niramit', sans-serif;
-    background-image: url(grafik/baggrund.png);
     margin: 0;
 }
+
+        #splash img {
+            height: 652px;
+        }
 
 
 /***LOGO***/
@@ -244,6 +247,101 @@ label a {
         }
 
 
+@media only screen and (min-width:600px) {
+
+/***LOGO***/
+
+.logo img {
+    height: 10rem;
+    width: 12rem;
+    top: -2rem;
+    left: 1rem;
+        }
+
+
+/****BURGERMENU****/
+
+
+label .menu {
+    top: 34rem;
+    left: 55rem;
+    width: 15rem;
+    height: 15rem;
+
+}
+
+label .hamburger {
+    top: 610px;
+    left: 935px;
+    width: 50px;
+    height: 4px;
+}
+
+
+
+label input:checked + .menu {
+    box-shadow: 0 0 0 var(--color-navigation), 0 0 0 150vh var(--color-navigation);
+    border-radius: 0;
+}
+
+
+/**NAVIGATION**/
+
+.social1 {
+    width: 3.5rem;
+
+}
+
+.social2 {
+    right: 5rem;
+    width: 3.9rem;
+
+}
+
+.social3 {
+    top: 1rem;
+    right: 9.5rem;
+    width: 3.4rem;
+
+}
+
+
+/***INDHOLD****/
+    .find {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 1rem;
+    }
+
+    .find .text {
+        margin-top: 1rem;
+        margin-left: 6rem;
+
+    }
+
+    .find h2 {
+        font-size: 7rem;
+    }
+
+    .find h3 {
+        font-size: 1.7rem;
+    }
+
+    .find p {
+        font-size: 1.2rem;
+        line-height: 1.5rem;
+    }
+
+    .find img {
+        width: 75%;
+        margin-top: 3rem;
+        margin-left: 3rem;
+    }
+
+
+        }
+
+
     </style>
 </head>
 
@@ -298,9 +396,8 @@ label a {
             <p>adresse: sankt peders stræde 5 <br> 1453 københavn</p>
             <p>kontakt@affamato.dk</p>
             <p>+45 33 74 34 17</p>
-        </div>
 
-        <div class="text">
+
             <h3>åbningstider</h3>
             <p>mandag-torsdag : 14.00-22.00</p>
             <p>fredag : 12.00-23.00</p>
