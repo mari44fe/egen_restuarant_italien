@@ -61,10 +61,10 @@
     {
         "id": "6",
         "kategori": "hovedretter",
-        "navn": "ovnstegt Blomkål",
+        "navn": "ovnstegt blomkål",
         "pris": "110",
         "kort": "langtidsstegt blomkål med søde løg, oliven og hvid vin. En blød nøddeagtig smag, hvor kød er fuldstændig overflødigt. Kan deles som hovedret mellem 2 personer eller som tilbehør mellem flere personer.",
-        "billede": "blomkål",
+        "billede": "blomkol",
         "allergener": "ingen",
         "section": "vegansk, vegetarisk, gluten- og lactosefri"
 },
