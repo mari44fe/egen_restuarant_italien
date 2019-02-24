@@ -692,7 +692,7 @@ label a {
 
 
         async function start() {
-            let myJson = await fetch("https://mandalskeawebspace.dk/claude_php/clean_up_spreadsheet.php?id=11bWkk284_mTjJZLNBBIVXMsLKOX3jeYQNRnLBhOWisU");
+            let myJson = await fetch("mad.json");
 
             retter = await myJson.json();
 
@@ -765,6 +765,7 @@ label a {
         function close() {
             document.querySelector("#popup").style.display = "none";
         }
+
     </script>
 
 </body>
