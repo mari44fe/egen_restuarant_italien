@@ -294,6 +294,7 @@
             position: absolute;
             top: -0.1rem;
             left:-2.6rem;
+            cursor: pointer;
 
         }
 
@@ -391,12 +392,6 @@ label input:checked + .menU {
 #liste {
 grid-template-columns: repeat(2, 1fr);
             }
-
-#luk {
-    right: 6rem;
-        }
-
-
 
 
 /*pop up vindue*/
@@ -697,7 +692,8 @@ label a {
 
 
         async function start() {
-            const myJson = await fetch("https://mandalskeawebspace.dk/claude_php/clean_up_spreadsheet.php?id=11bWkk284_mTjJZLNBBIVXMsLKOX3jeYQNRnLBhOWisU");
+            let myJson = await fetch("https://mandalskeawebspace.dk/claude_php/clean_up_spreadsheet.php?id=11bWkk284_mTjJZLNBBIVXMsLKOX3jeYQNRnLBhOWisU");
+
             retter = await myJson.json();
 
             retter.sort((a, b) => {
@@ -706,7 +702,6 @@ label a {
 
             visRetter();
         }
-
 
 
         function visRetter() {
