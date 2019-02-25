@@ -20,7 +20,7 @@
             --color-midtblue: #101F38;
 
             --color-lightblue: #365a84;
-            --color-container: rgba(16, 31, 56, 0.77);
+            --color-container: rgba(16, 31, 56, 0.92);
             --color-navigation: rgb(35, 64, 100);
                --color-nav: rgba(6, 3, 20, 0.82);
         }
@@ -34,7 +34,17 @@
         body {
             font-family: 'Niramit', sans-serif;
             background-image: url(grafik/baggrund.png);
+
             margin: 0;
+        }
+
+        p {
+            color: white;
+
+        }
+
+        h2 {
+            color: white;
         }
 
 
@@ -46,6 +56,15 @@
             width: 9rem;
             top: -2rem;
             right: 14.5rem;
+        }
+
+
+    /***SCROLL***/
+        .scroll {
+            position: absolute;
+            width: 3rem;
+            top: 23rem;
+            left: 10.5rem;
         }
 
 
@@ -212,9 +231,9 @@
 
         label ul {
             z-index: 200;
-            position: absolute;
+            position: fixed;
             top: 48%;
-            left: 50%;
+            left: 47%;
             transform: translate(-50%, -50%);
             opacity: 0;
             transition: 0.25s 0s ease-in-out;
@@ -223,18 +242,34 @@
         }
 
         label a {
-            margin-bottom: 1em;
+            margin-bottom: 1rem;
             display: block;
             color: white;
             text-decoration: none;
         }
 
         label li {
-            margin-bottom: 1em;
+            margin-top: 1rem;
+            line-height: 2.5rem;
             display: block;
             color: white;
             text-decoration: none;
             text-transform: lowercase;
+        }
+
+
+        .undermenu2 {
+            display: none;
+        }
+
+        .undermenu1 {
+            margin-top: -1rem;
+            border-bottom: 1px solid white;
+        }
+
+        .undermenu1 li {
+            font-size: 1.2rem;
+            margin-top: -0.5rem;
         }
 
         /*Retterne individuelt*/
@@ -248,7 +283,7 @@
 
         .minret {
             padding: 1rem;
-            background-color: white;
+           border: 0.01rem solid white;
         }
 
 
@@ -269,8 +304,8 @@
         }
 
         #indhold {
-            min-height: 50vh;
-            background-color: white;
+            min-height: 60vh;
+          border: 0.01rem solid white;
             width: 70vw;
             margin: 4rem auto;
         }
@@ -312,8 +347,16 @@
         }
 
         .pris {
-            margin-top: 0.5rem;
+            margin-top: -0.8rem;
             float: right;
+            font-size: 0.9rem;
+            font-weight: 300;
+        }
+
+        .beskrivelse {
+            font-size: 0.9rem;
+            font-weight: 300;
+            line-height: 1.2rem;
         }
 
 
@@ -347,6 +390,15 @@
         }
 
 
+/****SCROLL****/
+    .scroll {
+        width: 4rem;
+        top: 24rem;
+        left: 32rem;
+    }
+
+
+
 /****BURGERMENU****/
 
 
@@ -370,6 +422,10 @@ label .hamburger {
 label input:checked + .menU {
     box-shadow: 0 0 0 var(--color-navigation), 0 0 0 150vh var(--color-navigation);
     border-radius: 0;
+}
+
+.undermenu2 {
+display: none;
 }
 
 
@@ -418,7 +474,7 @@ grid-template-columns: repeat(2, 1fr);
 
         #indhold {
             min-height: 10vh;
-            background-color: white;
+            border: 0.01rem solid white;
             width: 35vw;
             margin: 2rem auto;
         }
@@ -494,11 +550,33 @@ grid-template-columns: repeat(2, 1fr);
         }
 
 
+
+/******SCROLL****/
+    .scroll {
+        width: 5rem;
+        top: 29rem;
+        left: 38rem;
+    }
+
 /****BURGERMENU****/
+
+    .undermenu1 {
+        display: none;
+    }
+
+    .undermenu2 {
+        margin-left: 1rem;
+        margin-top: 1.2rem;
+    }
+
+    .undermenu2 li {
+        font-size: 1.2rem;
+        font-style: italic;
+    }
 
     nav {
         width: 100%;
-        height:6.5rem;
+        height: 8rem;
         background-color: none;
         position: fixed;
         z-index: 1000;
@@ -513,9 +591,6 @@ nav a {
 
 }
 
-        br {
-            display: none;
-        }
 
 label .menU {
 display: none;
@@ -529,9 +604,8 @@ label .hamburger {
 
 label ul {
         position: fixed;
-        float: right;
-        top: 2.6rem;
-        left: 11rem;
+        top: 1.7rem;
+        left: 35rem;
         transform:none;
         opacity: 100;
         transition: none;
@@ -545,10 +619,10 @@ label li {
     margin-left: 1.5rem;
     }
 
-        label li:nth-child(5){
+/*         label li:nth-child(5){
             padding-right: 1.5rem;
         border-right: 1px solid white;
-        }
+        } */
 
 label a {
     margin-bottom: 1em;
@@ -556,6 +630,10 @@ label a {
     text-decoration: none;
     margin-right: 0.5rem;
 }
+
+    .undermenu2 {
+        display: inline-block;
+    }
 
 
 /**NAVIGATION**/
@@ -643,17 +721,42 @@ label a {
                     <span class="hamburger"></span>
                 </span>
                 <ul>
-                    <li class="filter valgt" data-ret="alle">Alle</li>
-                    <li class="filter" data-ret="forretter">Forretter</li>
-                    <li class="filter" data-ret="hovedretter">Hovedretter</li>
-                    <li class="filter" data-ret="dessert">Desserter</li>
-                    <li class="filter" data-ret="drikkevarer">Drikkevarer</li>
+                    <li>
+                        <a href="index.html">forside</a>
+                    </li>
+                    <li>
+                        <a href="menu2.html" style="color: var(--color-lightblue);font-size: 2.3rem;">menu</a>
+                    </li>
+                    <div class="undermenu1">
+                        <li class="filter valgt" data-ret="alle">Alle</li>
+                        <li class="filter" data-ret="forretter">Forretter</li>
+                        <li class="filter" data-ret="hovedretter">Hovedretter</li>
+                        <li class="filter" data-ret="dessert">Desserter</li>
+                        <li class="filter" data-ret="drikkevarer">Drikkevarer</li>
+                    </div>
+                    <li>
+                        <a href="koncept.html">koncept</a>
+                    </li>
+
+                    <li>
+                        <a href="find.html">find os</a>
+                    </li>
                     <br>
-                    <li> <a href="koncept.html">koncept</a></li>
-                    <li> <a href="find.html">find os</a></li>
+                    <div class="undermenu2">
+                        <li class="filter valgt" data-ret="alle">Alle</li>
+                        <li class="filter" data-ret="forretter">Forretter</li>
+                        <li class="filter" data-ret="hovedretter">Hovedretter</li>
+                        <li class="filter" data-ret="dessert">Desserter</li>
+                        <li class="filter" data-ret="drikkevarer">Drikkevarer</li>
+                    </div>
                 </ul>
             </label>
         </nav>
+
+        <div class="scroll">
+            <img src="grafik/scroll_down.svg" alt="scroll icon">
+        </div>
+
     </header>
 
     <!----------SPLASH-------------->
@@ -723,7 +826,6 @@ label a {
 <h2>${ret.navn}</h2>
 <p class="kategori">${ret.section}</p>
 <p class="betegnelse">allergener: ${ret.allergener}</p>
-<p>${ret.kort}</p>
 <p class="pris">pris: ${ret.pris},-</p>
     </articlet>`;
 
@@ -759,10 +861,8 @@ label a {
                     <article class="minret">
 <img src=imgs/${ret.billede}-sm.jpg alt=${ret.navn}>
 <h2>${ret.navn}</h2>
-<p class="kategori">${ret.section}</p>
-<p class="betegnelse">allergener: ${ret.allergener}</p>
-<p>${ret.kort}</p>
-<p>Pris: ${ret.pris},-</p>
+<p class="beskrivelse">${ret.kort}</p>
+<p class="pris">pris: ${ret.pris},-</p>
     </articlet>`;
             document.querySelector("#popup").style.display = "block";
             document.querySelector("#popup #luk").addEventListener("click", close);
@@ -771,7 +871,6 @@ label a {
         function close() {
             document.querySelector("#popup").style.display = "none";
         }
-
     </script>
 
 </body>

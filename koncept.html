@@ -70,6 +70,15 @@ body {
       width: 6rem;
         }
 
+
+/***SCROLL***/
+        .scroll {
+            position: absolute;
+            width: 3rem;
+            top: 23rem;
+            left: 10.5rem;
+        }
+
 /****BURGERMENU****/
 
 nav a {
@@ -81,6 +90,7 @@ nav a {
 nav a:hover {
     color: var(--color-lightblue);
 }
+
 
 label .menu {
     position: fixed;
@@ -159,9 +169,9 @@ label input:checked + .menu + ul {
 
 label ul {
     z-index: 200;
-    position: absolute;
+    position: fixed;
     top: 48%;
-    left: 50%;
+    left: 47%;
     transform: translate(-50%, -50%);
     opacity: 0;
     transition: 0.25s 0s ease-in-out;
@@ -215,6 +225,21 @@ label a {
 
         }
 
+        .nonna .picture {
+            padding: 1rem;
+        border: 0.01rem solid white;
+            margin-bottom: 0.5rem;
+
+        }
+
+
+        .nonna2 .picture {
+            padding: 1rem;
+        border: 0.01rem solid white;
+            margin-bottom: 0.5rem;
+
+        }
+
 .nonna h2 {
     font-family: 'Niramit', sans-serif;
     font-size: 1.5rem;
@@ -230,10 +255,6 @@ label a {
 
 }
 
-
-.nonna img {
-      padding: 1rem 0rem 1rem 0rem;
-        }
 
  .nonna2 {
     display: flex;
@@ -251,15 +272,11 @@ label a {
     font-family: 'Niramit', sans-serif;
     font-size: 1rem;
     color: white;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
     font-weight: 300;
 
 }
 
-
-.nonna2 img {
-      padding: 1rem 0rem 1rem 0rem;
-        }
 
 @media only screen and (min-width:376px) {
 
@@ -272,7 +289,12 @@ label a {
     left: 1rem;
         }
 
-
+/****SCROLL****/
+.scroll {
+width: 4rem;
+top: 24rem;
+left: 32rem;
+}
 
 /****BURGERMENU****/
 
@@ -342,6 +364,10 @@ label input:checked + .menu {
     grid-template-columns: repeat(2, 1fr);
     }
 
+    .nonna .text {
+        margin-right: 1rem;
+    }
+
 .nonna h2 {
     font-family: 'Niramit', sans-serif;
     font-size: 1.5rem;
@@ -354,20 +380,24 @@ label input:checked + .menu {
     font-size: 1rem;
     color: white;
     margin-bottom: 1rem;
-    margin-right: rem;
+    margin-right: 1rem;
 
 }
 
-.nonna img {
-    width: 80%;
-      padding: 1rem 0rem 1rem 0rem;
-    margin-left: 2rem;
-        }
+    .nonna .picture {
+        width: 80%;
+        margin: 0 auto;
+    }
 
 
 .nonna2 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    margin-top: 1rem;
+    }
+
+    .nonna2 .text {
+        margin-left: 1rem;
     }
 
 .nonna2 h2 {
@@ -387,11 +417,11 @@ label input:checked + .menu {
 
 }
 
-.nonna2 img {
-    width: 80%;
-      padding: 2rem 0rem 1rem 0rem;
-    margin-left: 4rem;
-        }
+    .nonna2 .picture {
+        width: 80%;
+        margin: 0 auto;
+        margin-top: 2rem;
+    }
 
  }
 
@@ -423,6 +453,13 @@ label input:checked + .menu {
       width: 8rem;
         }
 
+
+/******SCROLL****/
+.scroll {
+width: 5rem;
+top: 29rem;
+left: 38rem;
+}
 
 /****BURGERMENU****/
 
@@ -456,8 +493,8 @@ label .hamburger {
 label ul {
         position: fixed;
         float: right;
-        top: 2.6rem;
-        left: 36rem;
+        top: 1.7rem;
+        left: 34rem;
         transform:none;
         opacity: 100;
         transition: none;
@@ -474,7 +511,7 @@ label a {
     margin-bottom: 1em;
     color: white;
     text-decoration: none;
-    margin-left: 4rem;
+    margin-left: 2rem;
 }
 
 
@@ -508,27 +545,43 @@ label a {
     grid-template-columns: repeat(2, 1fr);
     }
 
+
+    .nonna .text {
+        margin-right: 2.7rem;
+    }
 .nonna h2 {
     font-size: 1.5rem;
     margin-top: 0.5rem;
+      margin-left: -2rem;
         }
 
 .nonna p {
     font-size: 1rem;
     margin-bottom: 1rem;
     font-weight: 300;
-    margin-right: 3rem;
+    margin-right: 2rem;
+    margin-left: -2rem;
 
 }
 
 
+    .nonna .picture {
+        width: 65%;
+        padding: 1.5rem;
+    }
 
-.nonna img {
-    width: 70%;
-      padding: 1rem 0rem 1rem 0rem;
-    margin-left: 5rem;
-        }
 
+    .nonna2 .picture {
+        width: 65%;
+        padding: 1.5rem;
+        margin-right: 4rem;
+        margin-top: 5rem;
+    }
+
+    .nonna2 .text {
+        margin-top: 4rem;
+        margin-left: 5.5rem;
+    }
 
 .nonna2 h2 {
     font-size: 1.5rem;
@@ -542,15 +595,6 @@ label a {
     margin-right: 3rem;
 
 }
-
-
-
-.nonna2 img {
-    width: 70%;
-      padding: 1rem 0rem 1rem 0rem;
-    margin-left: 5rem;
-        }
-
 
 
         }
@@ -585,9 +629,12 @@ label a {
                         <a href="menu2.html">menu</a>
                     </li>
                     <li>
-                        <a href="find.html">find os</a>
+                        <a href="koncept.html" style="color: var(--color-lightblue);font-size: 2.3rem;">koncept</a>
                     </li>
 
+                    <li>
+                        <a href="find.html">find os</a>
+                    </li>
                 </ul>
             </label>
         </nav>
@@ -598,6 +645,9 @@ label a {
             <p>koncept</p>
         </div>
 
+<div class="scroll">
+    <img src="grafik/scroll_down.svg" alt="scroll icon">
+</div>
     </header>
 
     <!----------SPLASH-------------->
@@ -650,6 +700,7 @@ label a {
                 minNav.style.setProperty('background-color', scrolled() > 50 ? "var(--color-nav)" : "");
             })
         }
+
     </script>
 
 </body>
