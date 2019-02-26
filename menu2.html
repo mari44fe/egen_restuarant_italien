@@ -63,7 +63,7 @@
         .scroll {
             position: absolute;
             width: 3rem;
-            top: 23rem;
+            top: 22rem;
             left: 10.5rem;
         }
 
@@ -102,37 +102,44 @@
 
         /****HEADER***/
 
-        .header {
-            margin: 0 auto;
-            position: absolute;
-            top: 30%;
-            left: 15%;
-           /*height: 100rem;
-            width: 200rem;
-            position: absolute;
-            left: 50%;
-            margin-left: -100px;
-            top: 50%;
-            margin-top: -50px; */
-        }
-
         .header h1 {
          position: absolute;
             font-family: 'Lovers Quarrel', cursive;
             font-weight: 200;
             color: white;
             text-transform: lowercase;
-            font-size: 7rem;
+            font-size: 9rem;
+            top: 9rem;
+            left: 7rem;
 
         }
 
-/*         .header img {
+        .header h2 {
             position: absolute;
-           top: 17rem;
-            left: 3rem;
-            height: 5rem;
-            width: 5rem;
-        } */
+            top: 16.5rem;
+            left: 7rem;
+            text-align: center;
+            font-size: 1.5rem;
+            font-family: 'Niramit', sans-serif;
+            font-weight: 300;
+            font-style: italic;
+            text-transform: lowercase;
+              border-top: 0.01rem solid white;
+            width: 20%;
+            padding-right: 1.8rem;
+            padding-top: 0.5rem;
+            color: var(--color-lightblue);
+
+        }
+
+.header img {
+            position: absolute;
+            top: 9.5rem;
+            left: 4rem;
+            height: 8rem;
+            width: 4rem;
+            transform: rotate(-5deg);
+        }
 
         /****BURGERMENU****/
 
@@ -284,6 +291,7 @@
             grid-template-columns: repeat(1, 1fr);
             margin: 1rem;
             grid-gap: 2rem;
+            margin-top: -5rem;
         }
 
         .minret {
@@ -379,29 +387,34 @@
         }
 
 
-    /****HEADER***/
+        /****HEADER***/
 
+        .header h1 {
+            font-size: 13rem;
+            top: 6rem;
+            left: 26rem;
 
-.header h1 {
-     /* top: 13rem;
-     left: 27.5rem;
-     font-size: 13rem; */
-    font-weight: 200;
+        }
+
+        .header h2 {
+            left: 26rem;
+            font-size: 1.8rem;
+            padding-right: 9.5rem;
+
         }
 
 .header img {
-      top: 18rem;
-      left: 20rem;
-      height: 10rem;
-      width: 8rem;
+            top: 8rem;
+            left: 22.5rem;
+            height: 8rem;
+            width: 5rem;
         }
-
 
 /****SCROLL****/
     .scroll {
         width: 4rem;
-        top: 24rem;
-        left: 32rem;
+        top: 23rem;
+        left: 31rem;
     }
 
 
@@ -553,25 +566,29 @@ grid-template-columns: repeat(3, 1fr);
 
 .header h1 {
     text-align: center;
-    /*  top: 16rem;
-     left: 34rem; */
+    top: 11rem;
+     left: 34rem;
      font-size: 13rem;
         }
 
 .header img {
-      top: 20rem;
-      left: 25rem;
+      top: 14rem;
+      left: 27rem;
       height: 10rem;
       width: 8rem;
         }
+
+    .header h2 {
+        display: none;
+    }
 
 
 
 /******SCROLL****/
     .scroll {
         width: 5rem;
-        top: 29rem;
-        left: 38rem;
+        top: 27rem;
+        left: 37rem;
     }
 
 /****BURGERMENU****/
@@ -790,8 +807,9 @@ label a {
         </nav>
 
         <div class="header">
-            <!--  <img src="logo_svg/logo_blad_hvid.svg" alt="logo blad"> -->
+            <img src="logo_svg/logo_blad_hvid.svg" alt="logo blad">
             <h1>menu</h1>
+            <h2>alle</h2>
         </div>
 
         <div class="scroll">
@@ -888,7 +906,7 @@ label a {
                     knap.classList.remove("valgt");
                 });
                 this.classList.add("valgt");
-                document.querySelector(".header h1").textContent = this.textContent;
+                document.querySelector(".header h2").textContent = this.textContent;
 
                 filter = this.getAttribute("data-ret");
                 open();
@@ -923,7 +941,6 @@ label a {
             visRetter();
 
         }
-
     </script>
 
 </body>
