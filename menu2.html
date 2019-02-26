@@ -249,10 +249,6 @@
 
         }
 
-        .hide {
-            display: none;
-        }
-
         label a {
             margin-bottom: 1rem;
             display: block;
@@ -773,7 +769,7 @@ label a {
                 <span class="menU">
                     <span class="hamburger"></span>
                 </span>
-                <ul class="hide">
+                <ul>
                     <li>
                         <a href="index.html">forside</a>
                     </li>
@@ -850,8 +846,6 @@ label a {
             addEventListener('scroll', () => {
                 minNav.style.setProperty('background-color', scrolled() > 50 ? "var(--color-nav)" : "");
             })
-
-            document.querySelector("label .menU").addEventListener("click", open);
             start();
         }
 
@@ -909,7 +903,7 @@ label a {
                 document.querySelector(".header h2").textContent = this.textContent;
 
                 filter = this.getAttribute("data-ret");
-                open();
+                visRetter();
             }
 
         }
@@ -928,15 +922,6 @@ label a {
 
         function close() {
             document.querySelector("#popup").style.display = "none";
-
-        }
-
-
-        function open() {
-            let menu = document.querySelector("label ul");
-            // if (menu.style.display == "none") {
-            console.log(menu.classList);
-            menu.classList.toggle("hide");
 
             visRetter();
 
