@@ -164,7 +164,7 @@ label input:checked + .menu + ul {
 
 label ul {
     z-index: 200;
-    position: absolute;
+    position: fixed;
     top: 48%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -172,7 +172,11 @@ label ul {
     transition: 0.25s 0s ease-in-out;
     list-style-type: none;
 
+
 }
+.hide{
+     display: none;
+        }
 
 label a {
     margin-bottom: 1em;
@@ -346,7 +350,6 @@ label input:checked + .menu {
     }
 
 
-
         }
 
 
@@ -416,9 +419,11 @@ label ul {
         opacity: 100;
         transition: none;
         list-style-type: none;
-
     }
 
+     .hide {
+         display: block;
+     }
 
 label li {
     display: inline;
@@ -429,6 +434,7 @@ label a {
     color: white;
     text-decoration: none;
     margin-left: 2rem;
+    display: inline-block;
 }
 
 
@@ -506,7 +512,7 @@ label a {
                 <span class="menu">
                     <span class="hamburger"></span>
                 </span>
-                <ul>
+                <ul class="hide">
                     <li>
                         <a href="index.html">forside</a>
                     </li>
@@ -559,6 +565,24 @@ label a {
 
 
     </article>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            document.querySelector("label .menu").addEventListener("click", open);
+        }
+
+        function open() {
+            let menu = document.querySelector("label ul");
+            // if (menu.style.display == "none") {
+            console.log(menu.classList);
+            menu.classList.toggle("hide");
+            // } else {
+            //     menu.style.display = "none";
+            // }
+        }
+    </script>
 
 </body>
 

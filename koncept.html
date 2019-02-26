@@ -179,6 +179,10 @@ label ul {
 
 }
 
+        .hide {
+            display: none;
+        }
+
 label a {
     margin-bottom: 1em;
     display: block;
@@ -502,6 +506,10 @@ label ul {
 
     }
 
+    .hide {
+        display: block;
+    }
+
 
 label li {
     display: inline;
@@ -621,7 +629,7 @@ label a {
                 <span class="menu">
                     <span class="hamburger"></span>
                 </span>
-                <ul>
+                <ul class="hide">
                     <li>
                         <a href="index.html">forside</a>
                     </li>
@@ -645,9 +653,9 @@ label a {
             <p>koncept</p>
         </div>
 
-<div class="scroll">
-    <img src="grafik/scroll_down.svg" alt="scroll icon">
-</div>
+        <div class="scroll">
+            <img src="grafik/scroll_down.svg" alt="scroll icon">
+        </div>
     </header>
 
     <!----------SPLASH-------------->
@@ -699,8 +707,24 @@ label a {
             addEventListener('scroll', () => {
                 minNav.style.setProperty('background-color', scrolled() > 50 ? "var(--color-nav)" : "");
             })
+
+            menu();
         }
 
+
+        function menu() {
+            document.querySelector("label .menu").addEventListener("click", open);
+        }
+
+        function open() {
+            let menu = document.querySelector("label ul");
+            // if (menu.style.display == "none") {
+            console.log(menu.classList);
+            menu.classList.toggle("hide");
+            // } else {
+            //     menu.style.display = "none";
+            // }
+        }
     </script>
 
 </body>

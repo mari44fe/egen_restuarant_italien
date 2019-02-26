@@ -241,6 +241,10 @@
 
         }
 
+        .hide {
+            display: none;
+        }
+
         label a {
             margin-bottom: 1rem;
             display: block;
@@ -283,6 +287,8 @@
 
         .minret {
             padding: 1rem;
+            padding-bottom: 2rem;
+            margin-bottom: 1rem;
            border: 0.01rem solid white;
         }
 
@@ -305,9 +311,9 @@
 
         #indhold {
             min-height: 60vh;
-          border: 0.01rem solid white;
             width: 70vw;
             margin: 4rem auto;
+            margin-bottom: 2rem;
         }
 
         #luk {
@@ -343,11 +349,11 @@
             font-family: 'Niramit', sans-serif;
              font-size: 1rem;
             font-style: italic;
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.5rem;
         }
 
         .pris {
-            margin-top: -0.8rem;
+            margin-top: 0rem;
             float: right;
             font-size: 0.9rem;
             font-weight: 300;
@@ -613,6 +619,10 @@ label ul {
 
     }
 
+    .hide {
+        display: block;
+    }
+
 
 label li {
     display: inline;
@@ -720,7 +730,7 @@ label a {
                 <span class="menU">
                     <span class="hamburger"></span>
                 </span>
-                <ul>
+                <ul class="hide">
                     <li>
                         <a href="index.html">forside</a>
                     </li>
@@ -778,7 +788,23 @@ label a {
         let retter = [];
         let filter = "alle";
 
-        document.addEventListener("DOMContentLoaded", navi);
+        document.addEventListener("DOMContentLoaded", menu);
+
+        function menu() {
+            document.querySelector("label .menU").addEventListener("click", open);
+        }
+
+        function open() {
+            let menu = document.querySelector("label ul");
+            // if (menu.style.display == "none") {
+            console.log(menu.classList);
+            menu.classList.toggle("hide");
+            // } else {
+            //     menu.style.display = "none";
+            // }
+
+            navi();
+        }
 
 
         let bodyTag = document.querySelector("body");

@@ -169,6 +169,10 @@ label ul {
 
 }
 
+.hide {
+    display: none;
+        }
+
 label a {
     margin-bottom: 1em;
     display: block;
@@ -351,6 +355,11 @@ label ul {
     }
 
 
+    .hide {
+        display: block;
+    }
+
+
 label li {
     display: inline;
     }
@@ -415,7 +424,7 @@ label a {
                 <span class="menu">
                     <span class="hamburger"></span>
                 </span>
-                <ul>
+                <ul class="hide">
 
                     <li>
                         <a href="menu2.html">menu</a>
@@ -441,6 +450,25 @@ label a {
             <img src="grafik/splash/mobile.png" alt="splashbillee">
         </picture>
     </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            document.querySelector("label .menu").addEventListener("click", open);
+        }
+
+        function open() {
+            let menu = document.querySelector("label ul");
+            // if (menu.style.display == "none") {
+            console.log(menu.classList);
+            menu.classList.toggle("hide");
+            // } else {
+            //     menu.style.display = "none";
+            // }
+        }
+    </script>
+
 
 </body>
 
