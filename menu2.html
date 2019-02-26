@@ -104,7 +104,10 @@
 
         .header {
             margin: 0 auto;
-           /*  height: 100rem;
+            position: absolute;
+            top: 30%;
+            left: 15%;
+           /*height: 100rem;
             width: 200rem;
             position: absolute;
             left: 50%;
@@ -114,9 +117,7 @@
         }
 
         .header h1 {
-            position: absolute;
-           top: 14rem;
-            left: 7.5rem;
+         position: absolute;
             font-family: 'Lovers Quarrel', cursive;
             font-weight: 200;
             color: white;
@@ -125,13 +126,13 @@
 
         }
 
-        .header img {
+/*         .header img {
             position: absolute;
            top: 17rem;
             left: 3rem;
             height: 5rem;
             width: 5rem;
-        }
+        } */
 
         /****BURGERMENU****/
 
@@ -382,9 +383,9 @@
 
 
 .header h1 {
-     top: 13rem;
+     /* top: 13rem;
      left: 27.5rem;
-     font-size: 13rem;
+     font-size: 13rem; */
     font-weight: 200;
         }
 
@@ -423,6 +424,11 @@ label .hamburger {
     height: 4px;
 }
 
+    label ul {
+         top: 51%;
+            left: 48%;
+    }
+
 
 
 label input:checked + .menU {
@@ -458,7 +464,7 @@ display: none;
 
 
 #liste {
-grid-template-columns: repeat(2, 1fr);
+grid-template-columns: repeat(3, 1fr);
             }
 
 
@@ -480,7 +486,7 @@ grid-template-columns: repeat(2, 1fr);
 
         #indhold {
             min-height: 10vh;
-            border: 0.01rem solid white;
+
             width: 35vw;
             margin: 2rem auto;
         }
@@ -502,8 +508,8 @@ grid-template-columns: repeat(2, 1fr);
             border-radius: 50px;
             border: none;
             position: absolute;
-            top: -2rem;
-            left: -20.9rem;
+            top: -1rem;
+            left: -21.9rem;
 
         }
 
@@ -540,12 +546,16 @@ grid-template-columns: repeat(2, 1fr);
 
     /****HEADER***/
 
+    .header {
+        margin: 0 auto;
+        width: 50%;
+    }
 
 .header h1 {
-     top: 16rem;
-     left: 34rem;
+    text-align: center;
+    /*  top: 16rem;
+     left: 34rem; */
      font-size: 13rem;
-    font-weight: 200;
         }
 
 .header img {
@@ -629,10 +639,6 @@ label li {
     margin-left: 1.5rem;
     }
 
-/*         label li:nth-child(5){
-            padding-right: 1.5rem;
-        border-right: 1px solid white;
-        } */
 
 label a {
     margin-bottom: 1em;
@@ -676,6 +682,31 @@ label a {
     grid-template-columns: repeat(3, 1fr);
             }
 
+.minret:hover {
+    transform: scale(1.05);
+        }
+
+.minret {
+    transition: all .5s ease-in-out;
+        }
+
+
+    #popup .minret:hover {
+         transform: none;
+         transition: none;
+    }
+
+    #popup .minret {
+        margin: 0 auto;
+        margin-top: 9rem;
+        width: 75%;
+    }
+
+
+    #popup .minret p {
+       font-size: 0.9rem;
+    }
+
 
 /*pop up vindue*/
 
@@ -684,17 +715,16 @@ label a {
         }
 
         #luk {
-            right: 10rem;
-            top: 9.5rem;
+            right: 12rem;
+            top: 10rem;
 
         }
 
         #luk button {
-            height: 4.5rem;
-            width: 4.5rem;
+            height: 4rem;
+            width: 4rem;
         }
 
-        }
 
     </style>
 </head>
@@ -715,10 +745,6 @@ label a {
     </div>
 
     <header>
-        <div class="header">
-            <img src="logo_svg/logo_blad_hvid.svg" alt="logo blad">
-            <h1>menu</h1>
-        </div>
 
         <nav class="menu">
             <span class="social1"><img src="grafik/social_media/Artboard%202.svg" alt="facebook"></span>
@@ -763,6 +789,11 @@ label a {
             </label>
         </nav>
 
+        <div class="header">
+            <!--  <img src="logo_svg/logo_blad_hvid.svg" alt="logo blad"> -->
+            <h1>menu</h1>
+        </div>
+
         <div class="scroll">
             <img src="grafik/scroll_down.svg" alt="scroll icon">
         </div>
@@ -783,29 +814,11 @@ label a {
         <section id="liste" class="retter"></section>
     </main>
 
-
     <script>
         let retter = [];
         let filter = "alle";
 
-        document.addEventListener("DOMContentLoaded", menu);
-
-        function menu() {
-            document.querySelector("label .menU").addEventListener("click", open);
-        }
-
-        function open() {
-            let menu = document.querySelector("label ul");
-            // if (menu.style.display == "none") {
-            console.log(menu.classList);
-            menu.classList.toggle("hide");
-            // } else {
-            //     menu.style.display = "none";
-            // }
-
-            navi();
-        }
-
+        document.addEventListener("DOMContentLoaded", navi);
 
         let bodyTag = document.querySelector("body");
         let minNav = document.querySelector("nav");
@@ -820,6 +833,7 @@ label a {
                 minNav.style.setProperty('background-color', scrolled() > 50 ? "var(--color-nav)" : "");
             })
 
+            document.querySelector("label .menU").addEventListener("click", open);
             start();
         }
 
@@ -877,7 +891,7 @@ label a {
                 document.querySelector(".header h1").textContent = this.textContent;
 
                 filter = this.getAttribute("data-ret");
-                visRetter();
+                open();
             }
 
         }
@@ -896,7 +910,20 @@ label a {
 
         function close() {
             document.querySelector("#popup").style.display = "none";
+
         }
+
+
+        function open() {
+            let menu = document.querySelector("label ul");
+            // if (menu.style.display == "none") {
+            console.log(menu.classList);
+            menu.classList.toggle("hide");
+
+            visRetter();
+
+        }
+
     </script>
 
 </body>
